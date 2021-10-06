@@ -25,5 +25,5 @@ public class Orders {
     private Apartment apartment;
 
     @ManyToOne
-    private User user;
+    private Users users;
 }

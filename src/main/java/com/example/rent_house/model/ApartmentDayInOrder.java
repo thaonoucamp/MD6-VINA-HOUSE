@@ -1,5 +1,6 @@
 package com.example.rent_house.model;
 
+import com.example.rent_house.model.Apartment;
 import lombok.Data;
 
 import javax.persistence.*;
