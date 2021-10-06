@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Entity
 @Data
-public class Order {
+public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,5 +25,5 @@ public class Order {
     private Apartment apartment;
 
     @ManyToOne
-    private User user;
+    private Users users;
 }
