@@ -27,6 +27,10 @@ public class Apartment {
     private Long numberView;
 
     @ManyToOne
+    @JoinColumn(name = "id_user")
+    private Users users;
+
+    @ManyToOne
     private TypeApartment typeApartment;
 
 }

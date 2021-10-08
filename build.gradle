@@ -43,6 +43,8 @@ dependencies {
     implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.0'
     implementation group: 'org.postgresql', name: 'postgresql', version: '9.4-1201-jdbc41'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '1.2.0.RELEASE'
+    implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
 }
 
 

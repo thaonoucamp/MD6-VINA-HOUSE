@@ -31,4 +31,9 @@ public class RolesServiceImp implements IRolesService {
     public void delete(Long id) {
         repositoryRoles.deleteById(id);
     }
+
+    @Override
+    public Roles findByName(String name) {
+        return repositoryRoles.findByName(name);
+    }
 }
