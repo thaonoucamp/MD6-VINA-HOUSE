@@ -25,7 +25,8 @@ public class Apartment {
     private double price;
     private String status;
     private Long numberView;
-
+    @ManyToOne
+    private Users users;
     @ManyToOne
     private TypeApartment typeApartment;
 

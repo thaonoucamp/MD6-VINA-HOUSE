@@ -14,7 +14,10 @@ public class Image {
     private Long id;
 
     @JsonBackReference
+//    chống lặp vô hạn dữ liệu
+
     @ManyToOne
     @JoinColumn(name = "id_apartment")
     private Apartment apartmentImage;
+    private String nameUrl;
 }
