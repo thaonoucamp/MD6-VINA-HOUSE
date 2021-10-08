@@ -1,4 +1,4 @@
-package com.example.rent_house.model;
+package com.example.rent_house.models;
 
 import lombok.Data;
 
@@ -9,16 +9,9 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class Users {
+public class TypeApartment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
-    private String password;
-    private String phoneNumber;
-    private String email;
-    private String fullName;
-    private String avatar;
-    private String city;
-
+    private String name;
 }

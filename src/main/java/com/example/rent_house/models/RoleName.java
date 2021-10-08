@@ -1,4 +1,4 @@
-package com.example.rent_house.model;
+package com.example.rent_house.models;
 
 
 

@@ -1,6 +1,6 @@
 package com.example.rent_house.service.users;
 
-import com.example.rent_house.model.Users;
+import com.example.rent_house.models.Users;
 import com.example.rent_house.repository.IRepositoryUsers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

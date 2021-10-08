@@ -1,6 +1,5 @@
-package com.example.rent_house.model;
+package com.example.rent_house.models;
 
-import com.example.rent_house.model.Apartment;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
