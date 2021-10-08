@@ -34,7 +34,7 @@ public class UserController {
         return new ResponseEntity<>(userOptional.get(), HttpStatus.OK);
     }
 
-    @PostMapping("/register")
+    @PostMapping("/signup")
     public ResponseEntity<Users> add(@RequestBody Users user) {
         return new ResponseEntity(userService.save(user), HttpStatus.CREATED);
     }
