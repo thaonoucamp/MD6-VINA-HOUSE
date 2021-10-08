@@ -13,7 +13,7 @@ public class UsersServiceImp implements IUsersService {
     IRepositoryUsers repositoryUsers;
 
     @Override
-    public Iterable<Users> getAll() {
+    public Iterable<Users> findAll() {
         return repositoryUsers.findAll();
     }
 

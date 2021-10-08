@@ -1,18 +1,29 @@
 package com.example.rent_house.models;
 
-import lombok.Data;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class ApartmentDayInOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private Date date;
-
+    private long id;
+    private Date dayInOrder;
     @ManyToOne
-    private Apartment apartment;
+    @JoinColumn(name = "apartment_id")
+    private Apartment dayInOrderApartment;
+
+    public ApartmentDayInOrder(Date dayInOrder, Apartment apartment) {
+        this.dayInOrder = dayInOrder;
+        this.dayInOrderApartment = apartment;
+    }
+
+    public ApartmentDayInOrder() {
+    }
 }

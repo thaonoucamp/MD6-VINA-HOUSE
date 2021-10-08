@@ -81,7 +81,7 @@ public class OrdersControllerAPI {
 //        public ResponseEntity<Iterable<Orders>> findByUserId(@PathVariable Long id){
 //            return new ResponseEntity<>(iOrdersService.findAllByUserId(id), HttpStatus.OK);
 //        }
-//
+
 //        @GetMapping("/get-apartment/{apartmentID}")
 //        public ResponseEntity<Iterable<Orders> findByApartmentID(@PathVariable Long apartmentID){
 //            return new ResponseEntity<>(iOrdersService.findAllByApartment(apartmentID), HttpStatus.OK);

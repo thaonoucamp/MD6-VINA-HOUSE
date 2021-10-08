@@ -7,20 +7,19 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@RestController
+@RequestMapping("/api/notifications")
 public class NotificationControllerAPI {
-//    @RestController
-//    @RequestMapping("/api/notifications")
-//    public class NotificationControllerAPI {
-//        @Autowired
-//        private INotificationService iNotificationService;
-//
-//        @GetMapping("/findAllByUser/{userId}")
-//        public ResponseEntity<Iterable<Notification>> findAllByUser(@PathVariable long userId){
-//            return new ResponseEntity<>(iNotificationService.findAllByUser(userId), HttpStatus.OK);
-//        }
-//        @PostMapping("")
-//        public ResponseEntity<Notification> save(@RequestBody Notification notification) {
-//            return new ResponseEntity<>(iNotificationService.save(notification),HttpStatus.CREATED);
-//        }
-//    }
+    @Autowired
+    INotificationService iNotificationService;
+
+    @GetMapping("/findAllByUser/{userId}")
+    public ResponseEntity<Iterable<Notification>> findAllByUser(@PathVariable long userId) {
+        return new ResponseEntity<>(iNotificationService.findAllByUser(userId), HttpStatus.OK);
+    }
+
+    @PostMapping("")
+    public ResponseEntity<Notification> save(@RequestBody Notification notification) {
+        return new ResponseEntity<>(iNotificationService.save(notification), HttpStatus.CREATED);
+    }
 }
