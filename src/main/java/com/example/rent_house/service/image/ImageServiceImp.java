@@ -1,6 +1,6 @@
 package com.example.rent_house.service.image;
 
-import com.example.rent_house.model.Image;
+import com.example.rent_house.models.Image;
 import com.example.rent_house.repository.IRepositoryImage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

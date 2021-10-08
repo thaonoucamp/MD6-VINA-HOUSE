@@ -1,6 +1,6 @@
 package com.example.rent_house.service.roles;
 
-import com.example.rent_house.model.Roles;
+import com.example.rent_house.models.Roles;
 import com.example.rent_house.repository.IRepositoryRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

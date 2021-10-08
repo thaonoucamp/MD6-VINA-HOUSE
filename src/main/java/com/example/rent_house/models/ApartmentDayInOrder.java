@@ -1,17 +1,18 @@
-package com.example.rent_house.model;
+package com.example.rent_house.models;
 
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Data
-public class Notification {
+public class ApartmentDayInOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String content;
+    private Date date;
 
     @ManyToOne
-    private Users users;
+    private Apartment apartment;
 }
