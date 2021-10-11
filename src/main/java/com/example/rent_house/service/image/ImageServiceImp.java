@@ -1,5 +1,6 @@
 package com.example.rent_house.service.image;
 
+import com.example.rent_house.model.Apartment;
 import com.example.rent_house.model.Image;
 import com.example.rent_house.repository.IRepositoryImage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,4 +32,5 @@ public class ImageServiceImp implements IImageService {
     public void delete(Long id) {
         repositoryImage.deleteById(id);
     }
+
 }

@@ -1,5 +1,8 @@
 package com.example.rent_house.service;
 
+import com.example.rent_house.model.Apartment;
+import com.example.rent_house.model.Image;
+
 import java.util.Optional;
 
 public interface IGenericService<T> {
