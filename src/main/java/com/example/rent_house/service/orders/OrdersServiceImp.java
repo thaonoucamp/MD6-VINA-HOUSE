@@ -1,5 +1,6 @@
 package com.example.rent_house.service.orders;
 
+import com.example.rent_house.model.Apartment;
 import com.example.rent_house.model.Orders;
 import com.example.rent_house.repository.IRepositoryOrders;
 import org.springframework.beans.factory.annotation.Autowired;

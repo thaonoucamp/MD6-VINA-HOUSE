@@ -1,5 +1,6 @@
 package com.example.rent_house.service.apartmentDayInOrder;
 
+import com.example.rent_house.model.Apartment;
 import com.example.rent_house.model.ApartmentDayInOrder;
 import com.example.rent_house.repository.IRepositoryApartmentDayInOrder;
 import org.springframework.beans.factory.annotation.Autowired;

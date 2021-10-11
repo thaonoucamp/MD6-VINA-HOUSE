@@ -1,7 +1,6 @@
 package com.example.rent_house.model;
 
 import lombok.Data;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -25,7 +24,6 @@ public class Apartment {
     private double price;
     private String status;
     private Long numberView;
-
     @ManyToOne
     @JoinColumn(name = "id_user")
     private Users users;

@@ -1,5 +1,6 @@
 package com.example.rent_house.service.notification;
 
+import com.example.rent_house.model.Apartment;
 import com.example.rent_house.model.Notification;
 import com.example.rent_house.repository.IRepositoryNotification;
 import org.springframework.beans.factory.annotation.Autowired;
