@@ -46,7 +46,17 @@ public class UsersServiceImp implements IUsersService {
 
     @Override
     public Users findByUsername(String username) {
-        return repositoryUsers.findByUsername("%" + username + "%");
+        return repositoryUsers.findUsersByUsername(username);
+    }
+
+    @Override
+    public Boolean existsByUsername(String username) {
+        return repositoryUsers.existsByUsername(username);
+    }
+
+    @Override
+    public Boolean existsByEmail(String email) {
+        return repositoryUsers.existsByEmail(email);
     }
 
     @Override
@@ -61,7 +71,7 @@ public class UsersServiceImp implements IUsersService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Users user = repositoryUsers.findByUsername(username);
+        Users user = repositoryUsers.findUsersByUsername(username);
         return UserPrincipal.build(user);
     }
 }

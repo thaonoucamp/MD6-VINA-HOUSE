@@ -6,4 +6,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface IUsersService extends IGenericService<Users>, UserDetailsService {
      Users findByUsername(String username);
+     Boolean existsByUsername(String username);
+     Boolean existsByEmail(String email);
 }

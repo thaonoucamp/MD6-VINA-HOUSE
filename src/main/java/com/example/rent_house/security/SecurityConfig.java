@@ -76,7 +76,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().ignoringAntMatchers("/**");
         http.httpBasic().authenticationEntryPoint(restServicesEntryPoint());
         http.authorizeRequests()
-                .antMatchers("/", "/login", "/register", "/users/**").permitAll()
+                .antMatchers("/**").permitAll()
+                .antMatchers("/", "/login", "/signup", "/users/**").permitAll()
                 .anyRequest().authenticated()
                 .and().csrf().disable()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
@@ -87,30 +88,30 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors();
     }
 
-    @PostConstruct
-    public void init() {
-        List<Users> users = (List<Users>) usersService.getAll();
-        List<Roles> roleList = (List<Roles>) rolesService.getAll();
-        if (roleList.isEmpty()) {
-            Roles roleAdmin = new Roles();
-            roleAdmin.setId(1L);
-            roleAdmin.setName(RoleName.ROLE_ADMIN.toString());
-            rolesService.save(roleAdmin);
-            Roles roleCoach = new Roles();
-            roleCoach.setId(2L);
-            roleCoach.setName(RoleName.ROLE_USER.toString());
-            rolesService.save(roleCoach);
-            if (users.isEmpty()) {
-                Users admin = new Users();
-                Set<Roles> roles = new HashSet<>();
-                roles.add(new Roles(1L, RoleName.ROLE_ADMIN.toString()));
-                admin.setEmail("admin");
-                admin.setUsername("admin");
-                admin.setFullName("admin");
-                admin.setRoles(roles);
-                admin.setPassword(passwordEncoder.encode("123456"));
-                usersService.save(admin);
-            }
-        }
-    }
+//    @PostConstruct
+//    public void init() {
+//        List<Users> users = (List<Users>) usersService.getAll();
+//        List<Roles> roleList = (List<Roles>) rolesService.getAll();
+//        if (roleList.isEmpty()) {
+//            Roles roleAdmin = new Roles();
+//            roleAdmin.setId(1L);
+//            roleAdmin.setName(RoleName.ROLE_ADMIN.toString());
+//            rolesService.save(roleAdmin);
+//            Roles roleCoach = new Roles();
+//            roleCoach.setId(2L);
+//            roleCoach.setName(RoleName.ROLE_USER.toString());
+//            rolesService.save(roleCoach);
+//            if (users.isEmpty()) {
+//                Users admin = new Users();
+//                Set<Roles> roles = new HashSet<>();
+//                roles.add(new Roles(1L, RoleName.ROLE_ADMIN.toString()));
+//                admin.setEmail("admin");
+//                admin.setUsername("admin");
+//                admin.setFullName("admin");
+//                admin.setRoles(roles);
+//                admin.setPassword(passwordEncoder.encode("123456"));
+//                usersService.save(admin);
+//            }
+//        }
+//    }
 }

@@ -1,6 +1,8 @@
 package com.example.rent_house.controller;
 
+import com.example.rent_house.model.Image;
 import com.example.rent_house.model.Users;
+import com.example.rent_house.service.image.IImageService;
 import com.example.rent_house.service.users.IUsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +20,7 @@ public class UserController {
     private IUsersService userService;
 
     @Autowired
-    PasswordEncoder passwordEncoder;
+    private IImageService iImageService;
 
     @GetMapping
     public ResponseEntity<Iterable<Users>> findAll() {
@@ -32,11 +34,6 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(userOptional.get(), HttpStatus.OK);
-    }
-
-    @PostMapping("/signup")
-    public ResponseEntity<Users> add(@RequestBody Users user) {
-        return new ResponseEntity(userService.save(user), HttpStatus.CREATED);
     }
 
     @PutMapping("/edit-user/{id}")
