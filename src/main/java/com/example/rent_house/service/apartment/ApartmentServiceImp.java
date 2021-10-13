@@ -1,16 +1,22 @@
 package com.example.rent_house.service.apartment;
 
 import com.example.rent_house.model.Apartment;
+import com.example.rent_house.model.Bill;
 import com.example.rent_house.repository.IRepositoryApartment;
+import com.example.rent_house.repository.IRepositoryBill;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 
 @Service
 public class ApartmentServiceImp implements IApartmentService {
     @Autowired
-    IRepositoryApartment repositoryApartment;
+    private IRepositoryApartment repositoryApartment;
+    @Autowired
+    private  IRepositoryBill iRepositoryBill;
 
     @Override
     public Iterable<Apartment> getAll() {
@@ -31,4 +37,5 @@ public class ApartmentServiceImp implements IApartmentService {
     public void delete(Long id) {
         repositoryApartment.deleteById(id);
     }
+
 }
