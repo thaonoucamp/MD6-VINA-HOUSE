@@ -72,9 +72,9 @@ public class ControllerApartment {
         iApartmentService.delete(id);
         return new ResponseEntity(HttpStatus.OK);
     }
-
-    @GetMapping("/totalBill")
-    public ResponseEntity<Double> showBill(@RequestBody Bill bill) {
-        return new ResponseEntity(iBillService.totalBill(bill), HttpStatus.OK);
-    }
+//
+//    @GetMapping("/totalBill")
+//    public ResponseEntity<Double> showBill(@RequestBody Bill bill) {
+//        return new ResponseEntity(HttpStatus.OK);
+//    }
 }

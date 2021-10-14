@@ -8,5 +8,5 @@ import com.example.rent_house.service.IGenericService;
 import java.time.LocalDate;
 
 public interface IBillService extends IGenericService<Bill> {
-    double totalBill(Bill bill);
+//    double totalBill(LocalDate startDay, LocalDate endDay, Long id);
 }

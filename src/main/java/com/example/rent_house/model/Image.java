@@ -13,6 +13,11 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "id_user")
+    @JsonBackReference
+    private Users users;
+
     @JsonBackReference
 //    chống lặp vô hạn dữ liệu
 

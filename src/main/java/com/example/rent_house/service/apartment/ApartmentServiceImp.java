@@ -15,8 +15,6 @@ import java.util.Optional;
 public class ApartmentServiceImp implements IApartmentService {
     @Autowired
     private IRepositoryApartment repositoryApartment;
-    @Autowired
-    private  IRepositoryBill iRepositoryBill;
 
     @Override
     public Iterable<Apartment> getAll() {

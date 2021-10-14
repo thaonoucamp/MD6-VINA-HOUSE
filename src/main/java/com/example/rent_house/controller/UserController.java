@@ -36,13 +36,20 @@ public class UserController {
         return new ResponseEntity<>(userOptional.get(), HttpStatus.OK);
     }
 
-    @PutMapping("/edit-user/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Users> updateRecoveredUser(@PathVariable Long id, @RequestBody Users user) {
+        Users userOld = (Users) userService.findById(id).get();
+        user.setId(userOld.getId());
+        String urlImage = user.getAvatar();
+        Image image = null;
+        image.setUsers(user);
+        image.setNameUrl(urlImage);
+        iImageService.save(image);
         return new ResponseEntity(userService.save(user), HttpStatus.OK);
     }
 
 
-    @DeleteMapping("/delete-user/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Users> deleteById(@PathVariable Long id) {
         Optional<Users> userOptional = userService.findById(id);
         if (!userOptional.isPresent()) {

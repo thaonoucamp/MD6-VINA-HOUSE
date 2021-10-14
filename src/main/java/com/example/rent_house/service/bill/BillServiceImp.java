@@ -3,7 +3,9 @@ package com.example.rent_house.service.bill;
 import com.example.rent_house.model.Apartment;
 import com.example.rent_house.model.Bill;
 import com.example.rent_house.model.Users;
+import com.example.rent_house.repository.IRepositoryApartment;
 import com.example.rent_house.repository.IRepositoryBill;
+import com.example.rent_house.repository.IRepositoryUsers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,8 @@ import java.util.Optional;
 public class BillServiceImp implements IBillService {
     @Autowired
     private IRepositoryBill iRepositoryBill;
+//    @Autowired
+//    private IRepositoryApartment repositoryApartment;
 
     @Override
     public Iterable<Bill> getAll() {
@@ -36,10 +40,11 @@ public class BillServiceImp implements IBillService {
         iRepositoryBill.deleteById(id);
     }
 
-    @Override
-    public double totalBill( Bill bill) {
-        final long days = (long) ChronoUnit.DAYS.between(bill.getStartDay(),bill.getEndDay());
-        double total = days * bill.getApartment().getPrice();
-        return total;
-    }
+//    @Override
+//    public double totalBill(LocalDate startDay, LocalDate endDay, Long id) {
+//        Apartment apartment = repositoryApartment.findById(id).get();
+//        final long days = ChronoUnit.DAYS.between(startDay, endDay);
+//        double total = days * apartment.getPrice();
+//        return total;
+//    }
 }

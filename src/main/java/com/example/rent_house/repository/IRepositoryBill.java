@@ -8,5 +8,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.time.LocalDate;
 
 public interface IRepositoryBill extends CrudRepository<Bill, Long> {
-    public double totalBill(Bill bill);
+//    public double totalBill(LocalDate startDay, LocalDate endDay, Long id);
     }
